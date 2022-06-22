@@ -34,10 +34,14 @@ fs.writeFile("testeWrite.txt","Test writing archive", (err, data) => {
 fs.appendFile("./files/fileRead.txt", "\nTeste", {encoding:"utf-8"}, (err, data) => {
     if (err) throw err;
     console.log(data);
-
 });
 
 fs.rename("testeWrite.txt", "testWriting.txt", (err, data) => {
     if (err) throw err;
     console.log(data);
 });
+
+fs.unlink("testWriting.txt", (err) => {
+    if (err) throw err;
+    console.log(`/textWriting.txt was deleted`);
+})
